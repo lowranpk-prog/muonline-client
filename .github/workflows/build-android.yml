@@ -1,6 +1,6 @@
 name: Build MU Online Android APK
 
-on:
+'on':
 workflow_dispatch:
 
 permissions:
@@ -10,7 +10,6 @@ jobs:
 build:
 runs-on: ubuntu-latest
 
-```
 steps:
   - name: Checkout repository
     uses: actions/checkout@v4
@@ -19,7 +18,7 @@ steps:
     uses: actions/setup-java@v4
     with:
       distribution: temurin
-      java-version: "17"
+      java-version: '17'
 
   - name: Set up Android SDK
     uses: android-actions/setup-android@v3
@@ -53,5 +52,3 @@ steps:
       name: MU-Online-Android-APK
       path: android/app/build/outputs/apk/**/*.apk
       if-no-files-found: error
-```
-
